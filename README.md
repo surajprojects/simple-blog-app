@@ -35,7 +35,7 @@ Tiger Blog App is a full-stack blogging platform that allows users to create, ed
 
 ## Deployment
 
-Tiger Blog App is deployed on GitHub Pages (frontend) and a cloud-based platform for the backend. You can access the live version here: [Tiger Blog App](https://simple-blog-app-peach.vercel.app/)
+Tiger Blog App is deployed on [Vercel](https://vercel.com/) (frontend) and [Render](https://render.com/) a cloud-based platform for the backend. You can access the live version here: [Tiger Blog App](https://simple-blog-app-peach.vercel.app/)
 
 ## Getting Started
 
