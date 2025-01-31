@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const SECRET_KEY = "your-secret-key";  // Store securely in environment variables
+const SECRET_KEY = process.env.SECRET_KEY || "your-secret-key";  // Store securely in environment variables
 
 const authenticateToken = (req, res, next) => {
     try {

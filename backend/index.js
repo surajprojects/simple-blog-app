@@ -8,7 +8,7 @@ const cookieParser = require("cookie-parser");
 const authRouter = require("./routes/users");
 const blogsRouter = require("./routes/blogs");
 
-const dbUrl = "mongodb+srv://suraj23082002:J9tQ2OK3AJYeUtUw@cluster0.v2efp.mongodb.net/";
+const dbUrl = process.env.MONGO_URL || "mongodb://localhost:27017/tiger-blog";
 
 mongoose.connect(dbUrl)
     .then(() => {
