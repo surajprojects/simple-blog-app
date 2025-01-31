@@ -7,6 +7,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 
+import { BASE_URL } from "../../../utils/config";
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -37,13 +38,13 @@ export default function Login() {
         e.preventDefault();
 
         try {
-            const response = await fetch("https://simple-blog-app-vxnb.onrender.com/auth/login", {
+            const response = await fetch(`${BASE_URL}/auth/login`, {
                 method: "POST",
+                credentials: "include",
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(formData),
-                credentials: "include"
+                body: JSON.stringify(formData)
             });
 
             const result = await response.json();

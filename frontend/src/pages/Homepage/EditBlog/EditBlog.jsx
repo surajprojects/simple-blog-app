@@ -10,6 +10,7 @@ import "react-quill/dist/quill.snow.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { currentDate } from "../../../utils/Date";
+import BASE_URL from "../../../utils/config";
 
 export default function EditBlog() {
 
@@ -31,12 +32,12 @@ export default function EditBlog() {
     useEffect(() => {
         async function getBlogData() {
             try {
-                const response = await fetch(`https://simple-blog-app-vxnb.onrender.com/blogs/${blogId}`, {
+                const response = await fetch(`${BASE_URL}/blogs/${blogId}`, {
                     method: "GET",
+                    credentials: "include",
                     headers: {
                         "Content-Type": "application/json"
                     },
-                    credentials: "include"
                 });
 
                 const result = await response.json();
@@ -100,13 +101,13 @@ export default function EditBlog() {
         e.preventDefault();
 
         try {
-            const response = await fetch(`https://simple-blog-app-vxnb.onrender.com/blogs/${blogId}/editblog`, {
+            const response = await fetch(`${BASE_URL}/blogs/${blogId}/editblog`, {
                 method: "PUT",
+                credentials: "include",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(formData),
-                credentials: "include"
             });
 
             const result = await response.json();

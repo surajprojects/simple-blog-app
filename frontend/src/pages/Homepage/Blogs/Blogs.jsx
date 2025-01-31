@@ -1,6 +1,8 @@
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
+import BASE_URL from "../../../utils/config";
+
 import BlogCards from "../../../components/BlogCards/BlogCards";
 
 import { useEffect, useState } from "react";
@@ -16,8 +18,9 @@ export default function Blogs() {
     useEffect(() => {
         async function getAllBlogsData() {
             try {
-                const response = await fetch("https://simple-blog-app-vxnb.onrender.com/blogs", {
+                const response = await fetch(`${BASE_URL}/blogs`, {
                     method: "GET",
+                    credentials: "include",
                     headers: {
                         "Content-Type": "application/json"
                     },

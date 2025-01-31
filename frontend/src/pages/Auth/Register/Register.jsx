@@ -9,6 +9,7 @@ import CardActions from '@mui/material/CardActions';
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../../../utils/config";
 
 export default function Register() {
 
@@ -38,13 +39,13 @@ export default function Register() {
         e.preventDefault();
 
         try {
-            const response = await fetch("https://simple-blog-app-vxnb.onrender.com/auth/register", {
+            const response = await fetch(`${BASE_URL}/auth/register`, {
                 method: "POST",
+                credentials: "include",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(formData),
-                credentials: "include"
             });
 
             const result = await response.json();

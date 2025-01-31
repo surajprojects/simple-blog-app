@@ -1,16 +1,17 @@
 import { useEffect } from "react";
+import { BASE_URL } from "../../../utils/config";
 
 export default function Logout() {
 
     useEffect(() => {
         const handleLogout = async () => {
             try {
-                const response = await fetch("https://simple-blog-app-vxnb.onrender.com/auth/logout", {
+                const response = await fetch(`${BASE_URL}/auth/logout`, {
                     method: "POST",
+                    credentials: "include",
                     headers: {
                         "Content-Type": "application/json"
                     },
-                    credentials: "include"
                 });
 
                 const result = await response.json();

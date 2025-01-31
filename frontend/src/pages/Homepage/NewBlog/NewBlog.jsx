@@ -9,6 +9,7 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { useNavigate, Link } from "react-router-dom";
 import { currentDate } from "../../../utils/Date";
+import BASE_URL from "../../../utils/config";
 
 export default function NewBlog() {
 
@@ -68,13 +69,13 @@ export default function NewBlog() {
         e.preventDefault();
 
         try {
-            const response = await fetch("https://simple-blog-app-vxnb.onrender.com/blogs/newblog", {
+            const response = await fetch(`${BASE_URL}/blogs/newblog`, {
                 method: "POST",
+                credentials: "include",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(formData),
-                credentials: "include"
             });
 
             const result = await response.json();

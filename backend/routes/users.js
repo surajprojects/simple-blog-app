@@ -31,10 +31,6 @@ router.post("/login", async (req, res) => {
         if (passwordCheck) {
             const token = jwt.sign({
                 id: userData._id,
-                isAdmin: "false",
-                username: userData.username,
-                email: userData.email,
-                fullname: userData.fullname,
                 iat: Math.floor(Date.now() / 1000)
             },
                 SECRET_KEY,
@@ -44,6 +40,7 @@ router.post("/login", async (req, res) => {
             res.cookie("token", token, {
                 httpOnly: true,
                 secure: true,
+                sameSite: "none",
                 maxAge: 3600000,
             });
 
@@ -70,10 +67,6 @@ router.post("/register", async (req, res) => {
 
         const token = jwt.sign({
             id: userData._id,
-            isAdmin: "false",
-            username: userData.username,
-            email: userData.email,
-            fullname: userData.fullname,
             iat: Math.floor(Date.now() / 1000)
         },
             SECRET_KEY,
@@ -83,6 +76,7 @@ router.post("/register", async (req, res) => {
         res.cookie("token", token, {
             httpOnly: true,
             secure: true,
+            sameSite: "none",
             maxAge: 3600000,
         });
 

@@ -2,6 +2,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
+import BASE_URL from "../../../utils/config";
 
 import { useState, useEffect } from "react";
 
@@ -24,12 +25,12 @@ export default function ShowBlog() {
     useEffect(() => {
         async function getBlogData() {
             try {
-                const response = await fetch(`https://simple-blog-app-vxnb.onrender.com/blogs/${blogId}`, {
+                const response = await fetch(`${BASE_URL}/blogs/${blogId}`, {
                     method: "GET",
+                    credentials: "include",
                     headers: {
                         "Content-Type": "application/json"
                     },
-                    credentials: "include"
                 });
 
                 const result = await response.json();
@@ -62,7 +63,7 @@ export default function ShowBlog() {
         e.preventDefault();
 
         try {
-            const response = await fetch(`https://simple-blog-app-vxnb.onrender.com/blogs/${blogId}`, {
+            const response = await fetch(`${BASE_URL}/blogs/${blogId}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json"
