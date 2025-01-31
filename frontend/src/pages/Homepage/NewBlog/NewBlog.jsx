@@ -9,7 +9,7 @@ import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { useNavigate, Link } from "react-router-dom";
 import { currentDate } from "../../../utils/Date";
-import BASE_URL from "../../../utils/config";
+import { BASE_URL } from "../../../utils/config";
 
 export default function NewBlog() {
 

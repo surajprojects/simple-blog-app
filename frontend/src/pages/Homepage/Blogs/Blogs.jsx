@@ -1,7 +1,7 @@
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
-import BASE_URL from "../../../utils/config";
+import { BASE_URL } from "../../../utils/config";
 
 import BlogCards from "../../../components/BlogCards/BlogCards";
 

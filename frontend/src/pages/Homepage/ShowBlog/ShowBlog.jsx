@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import BASE_URL from "../../../utils/config";
+import { BASE_URL } from "../../../utils/config";
 
 import { useState, useEffect } from "react";
 

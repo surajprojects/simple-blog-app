@@ -10,7 +10,7 @@ import "react-quill/dist/quill.snow.css";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { currentDate } from "../../../utils/Date";
-import BASE_URL from "../../../utils/config";
+import { BASE_URL } from "../../../utils/config";
 
 export default function EditBlog() {
 
