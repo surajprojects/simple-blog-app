@@ -68,7 +68,7 @@ export default function NewBlog() {
         e.preventDefault();
 
         try {
-            const response = await fetch("http://localhost:3000/blogs/newblog", {
+            const response = await fetch("https://simple-blog-app-vxnb.onrender.com/blogs/newblog", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

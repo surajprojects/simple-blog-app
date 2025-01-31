@@ -5,7 +5,7 @@ export default function Logout() {
     useEffect(() => {
         const handleLogout = async () => {
             try {
-                const response = await fetch("http://localhost:3000/auth/logout", {
+                const response = await fetch("https://simple-blog-app-vxnb.onrender.com/auth/logout", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"

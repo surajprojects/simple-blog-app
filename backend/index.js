@@ -8,7 +8,7 @@ const cookieParser = require("cookie-parser");
 const authRouter = require("./routes/users");
 const blogsRouter = require("./routes/blogs");
 
-const dbUrl = "mongodb://127.0.0.1:27017/tiger-blog";
+const dbUrl = "mongodb+srv://suraj23082002:J9tQ2OK3AJYeUtUw@cluster0.v2efp.mongodb.net/";
 
 mongoose.connect(dbUrl)
     .then(() => {
@@ -20,7 +20,8 @@ mongoose.connect(dbUrl)
     });
 
 app.use(cors({
-    origin: "http://localhost:5173",
+    // origin: "http://localhost:5173",
+    origin: "https://simple-blog-app-peach.vercel.app",
     credentials: true,
 }));
 

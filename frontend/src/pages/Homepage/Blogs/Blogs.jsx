@@ -16,7 +16,7 @@ export default function Blogs() {
     useEffect(() => {
         async function getAllBlogsData() {
             try {
-                const response = await fetch("http://localhost:3000/blogs", {
+                const response = await fetch("https://simple-blog-app-vxnb.onrender.com/blogs", {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json"

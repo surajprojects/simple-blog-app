@@ -24,7 +24,7 @@ export default function ShowBlog() {
     useEffect(() => {
         async function getBlogData() {
             try {
-                const response = await fetch(`http://localhost:3000/blogs/${blogId}`, {
+                const response = await fetch(`https://simple-blog-app-vxnb.onrender.com/blogs/${blogId}`, {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json"
@@ -62,7 +62,7 @@ export default function ShowBlog() {
         e.preventDefault();
 
         try {
-            const response = await fetch(`http://localhost:3000/blogs/${blogId}`, {
+            const response = await fetch(`https://simple-blog-app-vxnb.onrender.com/blogs/${blogId}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json"
